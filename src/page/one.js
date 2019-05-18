@@ -11,8 +11,8 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>第二个页面</Text>
-        <Text style={styles.title}>跨页面共享值</Text>
-        <Text style={styles.welcome}>HomeNum值:{homeNum}</Text>
+        <Text style={styles.title}>跨页面共享HomeNum值</Text>
+        <Text style={[styles.welcome, { color: "red" }]}>{homeNum}</Text>
       </View>
     );
   }
