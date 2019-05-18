@@ -2,6 +2,6 @@
 # 执行
 
 # 1.npm install 
-# 1.react-native link react-native-gesture-handler
+# 2.react-native link react-native-gesture-handler
 
 xcode run project
