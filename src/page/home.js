@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, Button } from "react-native";
 import { observer, inject } from "mobx-react";
 
 @inject("homeStore")
@@ -10,6 +10,7 @@ export default class App extends Component {
     let { homeNum } = this.props.homeStore;
     return (
       <View style={styles.container}>
+        <Text style={styles.title}>首页</Text>
         <Text style={styles.welcome}>homeSoter里面的numBer:{homeNum}</Text>
         <Text style={styles.welcome}>
           oneStore里面的numBer:{this.props.oneStore.oneNum}
@@ -35,6 +36,10 @@ export default class App extends Component {
           >
             <Text style={{ color: "white" }}>homeNum点击减少-1</Text>
           </TouchableOpacity>
+          <Button
+            title="去第二个页面"
+            onPress={() => this.props.navigation.navigate("One")}
+          />
         </View>
       </View>
     );
@@ -50,6 +55,11 @@ const styles = StyleSheet.create({
   },
   welcome: {
     fontSize: 20,
+    textAlign: "center",
+    margin: 10
+  },
+  title: {
+    fontSize: 30,
     textAlign: "center",
     margin: 10
   },
