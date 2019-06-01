@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Button } from "react-native";
 import { observer, inject } from "mobx-react";
-import DefaultComponent from '../loading';
+import DefaultComponent from '../loading/loading';
 
 @inject("homeStore")
 @inject("oneStore")

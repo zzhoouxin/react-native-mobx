@@ -1,11 +1,20 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { observer, inject } from "mobx-react";
+import {testComponentDidMount} from './../loading/decorator';
 
 @inject("homeStore")
 @inject("oneStore")
 @observer
+@testComponentDidMount
 export default class App extends Component {
+
+  componentDidMount(): void {
+  setTimeout(()=>{
+    this.props.setSuccessPage()
+  },1000)
+  }
+
   render() {
     let { homeNum } = this.props.homeStore;
     return (
