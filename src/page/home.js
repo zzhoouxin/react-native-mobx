@@ -1,19 +1,30 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Button } from "react-native";
 import { observer, inject } from "mobx-react";
+import DefaultComponent from '../loading';
 
 @inject("homeStore")
 @inject("oneStore")
 @observer
-export default class App extends Component {
-  render() {
+export default class App extends DefaultComponent {
+
+
+  componentDidMount(){
+    setTimeout(()=>{
+      this.setSuccessPage()
+    },2000)
+  }
+
+
+
+  _render() {
     let { homeNum } = this.props.homeStore;
     return (
       <View style={styles.container}>
         <Text style={styles.title}>首页</Text>
         <Text style={styles.welcome}>homeSoter里面的numBer:{homeNum}</Text>
         <Text style={styles.welcome}>
-          oneStore里面的numBer:{this.props.oneStore.oneNum}
+          1oneStore里面的numBer:{this.props.oneStore.oneNum}
         </Text>
         <View>
           <TouchableOpacity
