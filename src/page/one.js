@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { observer, inject } from "mobx-react";
-import {testComponentDidMount} from './../loading/decorator';
+import {testComponentDidMount,sendGA} from './../loading/decorator';
 
 @inject("homeStore")
 @inject("oneStore")
 @observer
 @testComponentDidMount
+
 export default class App extends Component {
 
   componentDidMount(): void {

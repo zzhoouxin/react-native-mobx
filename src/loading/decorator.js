@@ -6,7 +6,16 @@ import React, {
 import {View,Text} from 'react-native';
 
 
-
+/**
+ * 修饰器通用的处理方式
+ * @param value
+ * @returns {Function}
+ */
+export const sendGA = (value)=>{
+    return function(){
+        console.log("打点的页面为------>",value)
+    }
+}
 
 /**
  * 用来显示网络加载状态的修饰器

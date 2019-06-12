@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Button } from "react-native";
 import { observer, inject } from "mobx-react";
 import DefaultComponent from '../loading/loading';
+import {sendGA} from "../loading/decorator";
 
 @inject("homeStore")
 @inject("oneStore")
 @observer
+@sendGA("打点的页面")
 export default class App extends DefaultComponent {
 
 
