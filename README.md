@@ -3,5 +3,6 @@
 
 # 1.npm install 
 # 2.react-native link react-native-gesture-handler
+# 3.react-native run-ios
 
-xcode run project
+
